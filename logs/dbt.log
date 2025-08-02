@@ -1,0 +1,30 @@
+[0m22:17:10.909503 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DBB437FCB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DBB4F68050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DBB655FB10>]}
+
+
+============================== 22:17:10.914084 | fc9630d5-ce29-4014-9f85-f4d3ed9afd0e ==============================
+[0m22:17:10.914084 [info ] [MainThread]: Running with dbt=1.10.6
+[0m22:17:10.915251 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\Lucas\\.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt init covid_elt_project', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:17:10.935526 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\Lucas\.dbt
+[0m22:17:10.938177 [debug] [MainThread]: Starter project path: C:\Users\Lucas\OneDrive\Documentos\Lucas Fernandes\data-pipeline-etl-and-elt\env\Lib\site-packages\dbt\include\starter_project
+[0m22:17:10.955726 [info ] [MainThread]: 
+Your new dbt project "covid_elt_project" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:17:10.956361 [info ] [MainThread]: Setting up your profile.
+[0m22:18:49.748139 [info ] [MainThread]: Profile covid_elt_project written to C:\Users\Lucas\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m22:18:49.749484 [debug] [MainThread]: Command `dbt init` succeeded at 22:18:49.749359 after 99.02 seconds
+[0m22:18:49.749895 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DBB659FE10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DBB486C5F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DBB5436AD0>]}
+[0m22:18:49.750340 [debug] [MainThread]: Flushing usage events
+[0m22:18:50.702401 [debug] [MainThread]: An error was encountered while trying to flush usage events
