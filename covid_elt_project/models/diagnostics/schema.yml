@@ -10,3 +10,13 @@ models:
         description: "Total de registros com _id nulo"
       - name: ids_duplicados
         description: "Total de IDs duplicados"
+
+  - name: colunas_vazias
+    description: "Colunas com mais de 50% de valores vazios (string vazia '')"
+    columns:
+      - name: coluna
+        description: "Nome da coluna da base de dados"
+      - name: vazios
+        description: "Quantidade de valores vazios nessa coluna"
+      - name: percentual
+        description: "Percentual de valores vazios em relação ao total"
