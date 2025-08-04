@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: qualidade_dados
+    description: "Verifica valores nulos por coluna e total de _id duplicados"
+    columns:
+      - name: total_linhas
+        description: "Total de registros"
+      - name: _id_nulos
+        description: "Total de registros com _id nulo"
+      - name: ids_duplicados
+        description: "Total de IDs duplicados"

@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: covid_source
-    schema: public
+  - name: covid_source         # nome da fonte (você escolhe)
+    schema: public             # schema onde a tabela está no banco
     tables:
-      - name: stg_casos_covid
+      - name: stg_casos_covid  # nome da tabela externa criada via Python

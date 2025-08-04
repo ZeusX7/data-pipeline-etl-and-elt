@@ -7,7 +7,7 @@ profile: covid_elt_profile
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
-data-paths: ["data"]
+seed-paths: ["data"]
 macro-paths: ["macros"]
 target-path: "target"
 clean-targets: ["target", "dbt_modules"]
