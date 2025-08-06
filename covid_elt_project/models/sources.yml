@@ -3,7 +3,7 @@ version: 2
 
 sources:
   - name: raw
-    database: covid_etl
+    database: covid_elt
     description: "Dados brutos de vacinação COVID-19"
     schema: public  # ou o schema onde estão seus dados brutos
     tables:
