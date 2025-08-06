@@ -1,0 +1,104 @@
+# models/marts/schema.yml
+version: 2
+
+models:
+  - name: 02_dim_cnes
+    description: "Dimensão de estabelecimentos de saúde (CNES)"
+    columns:
+      - name: cnes_codigo
+        description: "Código único do estabelecimento de saúde"
+        tests:
+          - unique
+          - not_null
+      - name: unidade_saude_nome
+        description: "Nome do estabelecimento de saúde"
+        tests:
+          - not_null
+      - name: created_at
+        description: "Timestamp de criação do registro"
+
+  - name: 03_dim_vacina_lote
+    description: "Dimensão de lotes de vacinas"
+    columns:
+      - name: lote
+        description: "Código único do lote da vacina"
+        tests:
+          - unique
+          - not_null
+      - name: nome
+        description: "Nome da vacina"
+        tests:
+          - not_null
+      - name: fabricante
+        description: "Fabricante da vacina"
+      - name: pediatrica
+        description: "Indica se é vacina pediátrica"
+        tests:
+          - accepted_values:
+              values: [true, false]
+      - name: created_at
+        description: "Timestamp de criação do registro"
+
+  - name: 04_fact_pessoas_vacinadas
+    description: "Tabela fato principal com dados de vacinação"
+    columns:
+      - name: id
+        description: "Identificador único da aplicação"
+        tests:
+          - unique
+          - not_null
+      - name: idade
+        description: "Idade da pessoa vacinada"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 120
+      - name: sexo
+        description: "Sexo da pessoa (F/M)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['F', 'M']
+      - name: raca_cor
+        description: "Raça/cor autodeclarada"
+      - name: municipio
+        description: "Município onde foi aplicada a vacina"
+      - name: grupo
+        description: "Grupo prioritário"
+      - name: lote
+        description: "Lote da vacina aplicada"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('03_dim_vacina_lote')
+              field: lote
+      - name: dose_aplicada
+        description: "Número da dose (1, 2, 3, 4)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['1', '2', '3', '4']
+      - name: cnes_codigo
+        description: "Código do estabelecimento de saúde"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('02_dim_cnes')
+              field: cnes_codigo
+      - name: sistema_origem
+        description: "Sistema de origem dos dados"
+      - name: data_vacinacao
+        description: "Data da aplicação da vacina"
+        tests:
+          - not_null
+      - name: ano_vacinacao
+        description: "Ano da vacinação (calculado)"
+      - name: mes_vacinacao
+        description: "Mês da vacinação (calculado)"
+      - name: dia_semana
+        description: "Dia da semana da vacinação (0=domingo)"
+      - name: faixa_etaria_calculada
+        description: "Faixa etária calculada a partir da idade"
+      - name: created_at
+        description: "Timestamp de criação do registro"

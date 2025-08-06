@@ -1,5 +1,13 @@
-SQLAlchemy==2.0.42
-psycopg2-binary==2.9.10
-numpy==2.3.2
-pandas==2.3.1
-dbt-postgres==1.9.0
+# bibliotecas essenciais
+numpy
+pandas
+SQLAlchemy
+psycopg2-binary
+
+# dbt
+dbt-postgres
+dbt-core
+
+# jupyter
+jupyter
+ipykernel

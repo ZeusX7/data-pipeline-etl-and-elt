@@ -1,0 +1,53 @@
+# models/staging/sources.yml
+version: 2
+
+sources:
+  - name: raw
+    database: covid_elt
+    description: "Dados brutos de vacinação COVID-19"
+    schema: public  # ou o schema onde estão seus dados brutos
+    tables:
+      - name: covid_vacinacao_raw
+        identifier: stg_casos_covid
+        description: "Tabela com dados brutos de vacinação"
+        columns:
+          - name: _id
+            description: "ID original (será substituído)"
+          - name: faixa_etaria
+            description: "Faixa etária (será removida - redundante)"
+          - name: idade
+            description: "Idade em anos"
+            tests:
+              - not_null
+          - name: sexo
+            description: "Sexo da pessoa"
+            tests:
+              - not_null
+          - name: raca_cor
+            description: "Raça/cor autodeclarada"
+          - name: municipio
+            description: "Município de aplicação"
+          - name: grupo
+            description: "Grupo prioritário"
+          - name: categoria
+            description: "Categoria específica (72% vazia)"
+          - name: lote
+            description: "Lote da vacina"
+            tests:
+              - not_null
+          - name: vacina_fabricante
+            description: "Fabricante da vacina"
+            tests:
+              - not_null
+          - name: descricao_dose
+            description: "Número da dose aplicada"
+          - name: cnes
+            description: "Código e nome do estabelecimento"
+            tests:
+              - not_null
+          - name: sistema_origem
+            description: "Sistema de origem dos dados"
+          - name: data_vacinacao
+            description: "Data da vacinação"
+            tests:
+              - not_null

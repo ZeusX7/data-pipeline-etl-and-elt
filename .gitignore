@@ -1,2 +1,5 @@
 estudo_de_caso_etl.ipynb
-config.json
+/logs
+/venv
+ETL/datasets
+ELT/datasets
