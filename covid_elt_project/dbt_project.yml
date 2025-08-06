@@ -12,6 +12,33 @@ macro-paths: ["macros"]
 target-path: "target"
 clean-targets: ["target", "dbt_modules"]
 
+# Configurações dos modelos
 models:
   covid_elt_project:
-    +materialized: view
+    # Modelos de staging (views)
+    staging:
+      +materialized: view
+      +schema: staging
+    
+    # Modelos marts (tabelas)
+    marts:
+      +materialized: table
+      +schema: analytics
+
+# Configurações de testes
+tests:
+  +store_failures: true
+
+# Configurações de seeds
+seeds:
+  +schema: raw
+
+# Variáveis globais
+vars:
+  # Configurações de datas
+  start_date: '2021-01-01'
+  end_date: '2023-12-31'
+  
+  # Configurações de qualidade
+  max_age_limit: 120
+  valid_doses: ['1', '2', '3', '4']
