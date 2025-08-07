@@ -13,10 +13,10 @@
     ```
 2. Inicie e ative um venv Python
 
-    ´´´bash
+    ```bash
     python -m venv venv
     source venv/Scripts/activate
-    ´´´
+    ```
 
     >Para desativar o venv é só usar o comando:
     >```bash
@@ -25,9 +25,9 @@
 
 3. Instale as dependências
 
-    ´´´bash
+    ```bash
     pip install -r requirements.txt
-    ´´´
+    ```
 
 4. Mude os valores dentro de `/data-pipeline-etl-and-elt/config.json` para os valores do seu PostgreSQL
 
